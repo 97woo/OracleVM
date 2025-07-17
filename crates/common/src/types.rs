@@ -12,7 +12,7 @@ impl AssetPair {
     pub fn btc_usd() -> Self {
         Self("BTC/USD".to_string())
     }
-    
+
     pub fn as_str(&self) -> &str {
         &self.0
     }
@@ -22,10 +22,10 @@ impl AssetPair {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct PriceData {
     pub pair: AssetPair,
-    pub price: u64,           // Price in cents (for USD pairs)
+    pub price: u64, // Price in cents (for USD pairs)
     pub timestamp: DateTime<Utc>,
-    pub volume: Option<u64>,  // 24h volume
-    pub source: String,       // Exchange name
+    pub volume: Option<u64>, // 24h volume
+    pub source: String,      // Exchange name
 }
 
 /// Signed price data with oracle signature
@@ -44,7 +44,7 @@ pub struct AggregatedPrice {
     pub mean_price: u64,
     pub timestamp: DateTime<Utc>,
     pub sources: Vec<String>,
-    pub confidence: f64,      // 0.0 to 1.0
+    pub confidence: f64, // 0.0 to 1.0
 }
 
 /// Oracle node identifier
@@ -55,7 +55,7 @@ impl NodeId {
     pub fn new(id: impl Into<String>) -> Self {
         Self(id.into())
     }
-    
+
     pub fn as_str(&self) -> &str {
         &self.0
     }

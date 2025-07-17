@@ -4,9 +4,10 @@ members = [
     "crates/aggregator",
     "crates/committer",
     "crates/bitcoin-client",
-    "crates/bitvmx-integration",
     "crates/defi-primitives",
     "crates/common",
+    "contracts",
+    "calculation",
 ]
 resolver = "2"
 
