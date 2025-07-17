@@ -1,70 +1,15 @@
-# Dependencies
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-.pnpm-debug.log*
+# ===========================
+# Rust / Cargo
+# ===========================
+# Build artifacts
+target/
+Cargo.lock
+**/*.rs.bk
+*.pdb
 
-# TypeScript build output
-dist/
-build/
-*.tsbuildinfo
-
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# IDE and editor files
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.DS_Store
-
-# Testing
-coverage/
-.nyc_output/
-*.lcov
-
-# Logs
-logs/
-*.log
-
-# Temporary files
-tmp/
-temp/
-*.tmp
-
-# Contract build artifacts
-artifacts/
-cache/
-typechain/
-typechain-types/
-
-# Hardhat files
-deployments/
-
-# OpenZeppelin
-.openzeppelin/
-
-# Package lock files (choose one)
-# package-lock.json
-# yarn.lock
-# pnpm-lock.yaml
-
-# Miscellaneous
-.cache/
-.parcel-cache/
-.turbo/
-.vercel/
-.next/
-
+# ===========================
 # Python
+# ===========================
 __pycache__/
 *.py[cod]
 *$py.class
@@ -74,11 +19,108 @@ venv/
 ENV/
 env/
 .venv
+*.egg-info/
+dist/
+build/
 
-# Added by cargo
-/target
-Cargo.lock
+# ===========================
+# C/C++ Build Artifacts
+# ===========================
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.elf
+*.bin
+*.exe
+*.out
 
-# Project-specific
-CLAUDE.md
+# ===========================
+# Logs and Debugging
+# ===========================
+logs/
+*.log
+*.trace
+*.dump
+core.*
+
+# ===========================
+# Environment and Secrets
+# ===========================
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.cert
+private_keys/
+
+# ===========================
+# IDE and Editor
+# ===========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.classpath
+.settings/
+
+# ===========================
+# Testing and Coverage
+# ===========================
+coverage/
+*.lcov
+.nyc_output/
+htmlcov/
+.coverage
+.pytest_cache/
+test-results/
+
+# ===========================
+# Temporary Files
+# ===========================
+tmp/
+temp/
+*.tmp
+*.temp
+.cache/
+
+# ===========================
+# BitVMX Protocol Specific
+# ===========================
+bitvmx_protocol/prover_files/*
+!bitvmx_protocol/prover_files/.gitkeep
+bitvmx_protocol/verifier_files/*
+!bitvmx_protocol/verifier_files/.gitkeep
+bitvmx_protocol/execution_files/*.trace
+bitvmx_protocol/BitVMX-CPU/docker-riscv32/riscv32/build/
+bitvmx_protocol/BitVMX-CPU/docker-riscv32/compliance/build/
+bitvmx_protocol/BitVMX-CPU/docker-riscv32/verifier/build/
+bitvmx_protocol/**/*.backup
+
+# ===========================
+# Integration Test Artifacts
+# ===========================
+integration_test
+test_input
+test_output
+
+# ===========================
+# Documentation (Keep Only Public)
+# ===========================
+# Note: Keep public docs, ignore private/temp docs
 temp_docs/
+CLAUDE.md
+
+# ===========================
+# Node.js (if frontend added)
+# ===========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

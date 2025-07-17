@@ -54,7 +54,7 @@ impl Default for DatabaseConfig {
     fn default() -> Self {
         Self {
             path: "./data".to_string(),
-            cache_size: 256 * 1024 * 1024, // 256MB
+            cache_size: 256 * 1024 * 1024,       // 256MB
             write_buffer_size: 64 * 1024 * 1024, // 64MB
         }
     }
@@ -97,40 +97,49 @@ pub fn parse_duration(s: &str) -> Result<Duration> {
     if s.is_empty() {
         return Err(OracleVmError::Config("Empty duration string".to_string()));
     }
-    
+
     let (value_str, unit) = if let Some(pos) = s.find(|c: char| c.is_alphabetic()) {
         (&s[..pos], &s[pos..])
     } else {
         (s, "")
     };
-    
-    let value: u64 = value_str.parse()
+
+    let value: u64 = value_str
+        .parse()
         .map_err(|_| OracleVmError::Config(format!("Invalid duration value: {}", value_str)))?;
-    
+
     let duration = match unit {
         "" | "s" => Duration::from_secs(value),
         "ms" => Duration::from_millis(value),
         "m" => Duration::from_secs(value * 60),
         "h" => Duration::from_secs(value * 3600),
         "d" => Duration::from_secs(value * 86400),
-        _ => return Err(OracleVmError::Config(format!("Unknown duration unit: {}", unit))),
+        _ => {
+            return Err(OracleVmError::Config(format!(
+                "Unknown duration unit: {}",
+                unit
+            )))
+        }
     };
-    
+
     Ok(duration)
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
-    
+
     #[test]
     fn test_parse_duration() {
         assert_eq!(parse_duration("30s").unwrap(), Duration::from_secs(30));
         assert_eq!(parse_duration("5m").unwrap(), Duration::from_secs(300));
         assert_eq!(parse_duration("1h").unwrap(), Duration::from_secs(3600));
-        assert_eq!(parse_duration("1000ms").unwrap(), Duration::from_millis(1000));
+        assert_eq!(
+            parse_duration("1000ms").unwrap(),
+            Duration::from_millis(1000)
+        );
     }
-    
+
     #[test]
     fn test_base_config() {
         let config = BaseConfig::new("test-node");
