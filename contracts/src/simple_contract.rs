@@ -138,6 +138,7 @@ impl SimpleContractManager {
         self.pool_state.locked_collateral += collateral;
         self.pool_state.total_premium_collected += premium;
         self.pool_state.total_liquidity += premium;
+        self.pool_state.available_liquidity += premium; // 프리미엄은 사용 가능한 유동성에 추가
         self.pool_state.active_options += 1;
 
         Ok(())

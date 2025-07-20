@@ -120,10 +120,19 @@ fn test_settle_call_otm() {
         "user1".to_string()
     ).unwrap();
     
+    println!("After create_option - Available: {}, Locked: {}, Total: {}", 
+        manager.pool_state.available_liquidity,
+        manager.pool_state.locked_collateral,
+        manager.pool_state.total_liquidity);
+    
     // Settle at $65,000 (OTM)
     let payout = manager.settle_option("CALL-001", 65_000_00).unwrap();
     
     assert_eq!(payout, 0);
+    println!("After settlement - Available: {}, Locked: {}, Total: {}", 
+        manager.pool_state.available_liquidity,
+        manager.pool_state.locked_collateral,
+        manager.pool_state.total_liquidity);
     assert_eq!(manager.pool_state.available_liquidity, 100_250_000);
 }
 
@@ -228,7 +237,10 @@ fn test_utilization_rate() {
     ).unwrap();
     
     let utilization = manager.pool_state.utilization_rate();
-    assert!((utilization - 30.0).abs() < 0.01);
+    // 프리미엄 1M이 추가되어 total_liquidity는 101M
+    // 30M / 101M = 29.7%
+    let expected_utilization = 30_000_000.0 / 101_000_000.0 * 100.0;
+    assert!((utilization - expected_utilization).abs() < 0.01);
 }
 
 #[test]

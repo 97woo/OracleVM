@@ -484,7 +484,10 @@ mod pool_utilization {
 
         // Then
         let utilization = manager.pool_state.utilization_rate();
-        assert!((utilization - 30.0).abs() < 0.01); // ~30%
+        // 프리미엄 1M이 추가되어 total_liquidity는 101M
+        // 30M / 101M = 29.7%
+        let expected_utilization = 30_000_000.0 / 101_000_000.0 * 100.0;
+        assert!((utilization - expected_utilization).abs() < 0.01);
     }
 
     #[test]
@@ -519,7 +522,8 @@ mod pool_utilization {
         assert_eq!(manager.pool_state.locked_collateral, expected_locked);
         
         let utilization = manager.pool_state.utilization_rate();
-        let expected_util = (expected_locked as f64 / 200_000_000.0) * 100.0;
+        // total_liquidity는 200M + 500K + 300K = 200.8M
+        let expected_util = (expected_locked as f64 / 200_800_000.0) * 100.0;
         assert!((utilization - expected_util).abs() < 0.01);
     }
 }
