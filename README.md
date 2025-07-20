@@ -11,6 +11,8 @@
 
 BTCFi Oracle VM is a groundbreaking system that brings sophisticated DeFi primitives directly to Bitcoin Layer 1, enabling trustless option settlement without external chains or bridges.
 
+**🆕 Latest Update**: Full Bitcoin L1 native option implementation with BitVMX integration is now complete! Test it on Bitcoin Testnet today.
+
 ### Key Features
 
 - **Bitcoin Native**: All settlements occur directly on Bitcoin Layer 1
@@ -52,6 +54,23 @@ The system consists of four core modules working in harmony:
 ```
 
 ## 🚀 Quick Start
+
+### Bitcoin Testnet Demo (NEW!)
+
+```bash
+# Generate test keys
+cargo run --bin testnet-deploy -- generate-keys
+
+# Create option contract address  
+cargo run --bin testnet-deploy -- create-option-address \
+  --buyer-pubkey <hex> --seller-pubkey <hex> --verifier-pubkey <hex> \
+  --strike 50000 --expiry 2580000
+
+# Run interactive demo
+cargo run --example testnet_demo
+```
+
+See [TESTNET_GUIDE.md](TESTNET_GUIDE.md) for detailed instructions.
 
 ### Prerequisites
 
@@ -114,7 +133,7 @@ Our comprehensive test suite ensures system reliability:
 | Module | Tests | Coverage | Description |
 |--------|-------|----------|-------------|
 | **Oracle Node** | 24 | ✅ 100% | Price collection, consensus, precision |
-| **Contract** | 65 | ✅ 100% | Options, pools, settlements |
+| **Contract** | 71 | ✅ 100% | Options, pools, settlements, Bitcoin L1 |
 | **Calculation** | - | 🔄 | Black-Scholes, Greeks |
 | **BitVMX** | ✅ | ✅ | RISC-V execution, proofs |
 
