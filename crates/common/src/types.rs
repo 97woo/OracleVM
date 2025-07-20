@@ -4,6 +4,13 @@ use bitcoin::PublicKey;
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 
+/// Option type
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+pub enum OptionType {
+    Call,
+    Put,
+}
+
 /// Asset pair identifier (e.g., "BTC/USD")
 #[derive(Debug, Clone, Hash, PartialEq, Eq, Serialize, Deserialize)]
 pub struct AssetPair(pub String);

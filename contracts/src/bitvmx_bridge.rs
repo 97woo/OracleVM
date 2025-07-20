@@ -1,4 +1,5 @@
-use crate::bitcoin_option::{BitcoinOption, OptionType};
+use crate::bitcoin_option::BitcoinOption;
+use oracle_vm_common::types::OptionType;
 use anyhow::Result;
 use bitcoin::hashes::{sha256, Hash};
 use std::process::Command;

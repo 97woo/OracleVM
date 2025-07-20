@@ -9,7 +9,6 @@ mod binance;
 mod coinbase;
 mod grpc_client;
 mod kraken;
-mod precision_test;
 mod safe_price;
 mod price_provider;
 
@@ -19,12 +18,8 @@ use grpc_client::GrpcAggregatorClient;
 use kraken::KrakenClient;
 use price_provider::PriceProvider;
 
-#[derive(Clone)]
-pub struct PriceData {
-    pub price: f64,
-    pub timestamp: u64,
-    pub source: String,
-}
+// PriceData는 oracle_vm_common::types에서 가져옴
+use oracle_vm_common::types::PriceData;
 
 /// 거래소 클라이언트 생성 헬퍼
 fn create_exchange_provider(exchange: &str) -> Result<Box<dyn PriceProvider>> {

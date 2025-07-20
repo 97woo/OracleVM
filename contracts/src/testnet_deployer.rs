@@ -1,4 +1,5 @@
-use crate::bitcoin_option::{BitcoinOption, OptionType};
+use crate::bitcoin_option::BitcoinOption;
+use oracle_vm_common::types::OptionType;
 use bitcoin::{
     Network, Transaction, TxIn, TxOut, OutPoint, Sequence, Witness,
     Amount, Address, ScriptBuf, absolute::LockTime,
@@ -83,7 +84,7 @@ impl TestnetDeployer {
         };
         
         // 트랜잭션 조립
-        let mut tx = Transaction {
+        let tx = Transaction {
             version: bitcoin::transaction::Version::TWO,
             lock_time: LockTime::ZERO,
             input: vec![buyer_input, seller_input],
@@ -157,7 +158,7 @@ impl TestnetDeployer {
             }
         };
         
-        let mut tx = Transaction {
+        let tx = Transaction {
             version: bitcoin::transaction::Version::TWO,
             lock_time: LockTime::from_height(option.expiry_block).unwrap(),
             input: vec![input],

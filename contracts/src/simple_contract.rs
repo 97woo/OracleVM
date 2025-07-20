@@ -1,13 +1,7 @@
 use anyhow::Result;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
-
-/// 간단한 옵션 타입
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
-pub enum OptionType {
-    Call,
-    Put,
-}
+use oracle_vm_common::types::OptionType;
 
 /// 옵션 상태
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
