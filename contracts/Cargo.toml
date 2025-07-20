@@ -7,6 +7,10 @@ edition = "2021"
 name = "testnet-deploy"
 path = "src/bin/testnet_deploy.rs"
 
+[[bin]]
+name = "create-raw-tx"
+path = "src/bin/create_raw_tx.rs"
+
 [dependencies]
 bitcoin = { version = "0.32", features = ["serde", "rand", "rand-std"] }
 anyhow = "1.0"
