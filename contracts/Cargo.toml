@@ -3,6 +3,14 @@ name = "btcfi-contracts"
 version = "0.1.0"
 edition = "2021"
 
+[[bin]]
+name = "testnet-deploy"
+path = "src/bin/testnet_deploy.rs"
+
+[[bin]]
+name = "create-raw-tx"
+path = "src/bin/create_raw_tx.rs"
+
 [dependencies]
 bitcoin = { version = "0.32", features = ["serde", "rand", "rand-std"] }
 anyhow = "1.0"
@@ -11,6 +19,8 @@ serde_json = "1.0"
 tokio = { version = "1.0", features = ["full"] }
 tracing = "0.1"
 tracing-subscriber = "0.3"
+hex = "0.4"
+clap = { version = "4.0", features = ["derive"] }
 
 [dev-dependencies]
 tokio-test = "0.4"

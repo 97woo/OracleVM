@@ -347,9 +347,9 @@ dependencies = [
 
 [[package]]
 name = "bitcoin"
-version = "0.32.5"
+version = "0.32.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ce6bc65742dea50536e35ad42492b234c27904a27f0abdcbce605015cb4ea026"
+checksum = "ad8929a18b8e33ea6b3c09297b687baaa71fb1b97353243a3f1029fad5c59c5b"
 dependencies = [
  "base58ck",
  "bech32 0.11.0",
@@ -538,6 +538,7 @@ dependencies = [
 name = "btcfi-calculation"
 version = "0.1.0"
 dependencies = [
+ "async-trait",
  "axum",
  "libm",
  "serde",
@@ -553,7 +554,9 @@ name = "btcfi-contracts"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "bitcoin 0.32.5",
+ "bitcoin 0.32.6",
+ "clap",
+ "hex",
  "serde",
  "serde_json",
  "tokio",
@@ -1176,6 +1179,12 @@ name = "hermit-abi"
 version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fc0fef456e4baa96da950455cd02c081ca953b141298e41db3fc7e36b1da849c"
+
+[[package]]
+name = "hex"
+version = "0.4.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
 
 [[package]]
 name = "hex-conservative"
