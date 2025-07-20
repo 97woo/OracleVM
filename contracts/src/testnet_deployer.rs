@@ -1,4 +1,5 @@
-use crate::bitcoin_option::{BitcoinOption, OptionType};
+use crate::bitcoin_option::BitcoinOption;
+use oracle_vm_common::types::OptionType;
 use bitcoin::{
     Network, Transaction, TxIn, TxOut, OutPoint, Sequence, Witness,
     Amount, Address, ScriptBuf, absolute::LockTime,

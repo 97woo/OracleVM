@@ -4,6 +4,7 @@ use bitcoin::taproot::{TaprootBuilder, TaprootSpendInfo};
 use bitcoin::secp256k1::{Secp256k1};
 use bitcoin::XOnlyPublicKey;
 use anyhow::Result;
+use oracle_vm_common::types::OptionType;
 
 /// Bitcoin L1 단방향 옵션 컨트랙트
 /// BitVMX를 사용하여 오프체인 계산과 온체인 검증을 결합
@@ -26,11 +27,6 @@ pub struct BitcoinOption {
     pub collateral: u64,
 }
 
-#[derive(Debug, Clone, Copy, PartialEq)]
-pub enum OptionType {
-    Call,
-    Put,
-}
 
 impl BitcoinOption {
     /// 옵션 컨트랙트의 Taproot 스크립트 생성

@@ -2,6 +2,7 @@ use anyhow::Result;
 use bitcoin::{Address, Amount, OutPoint, PublicKey, Txid};
 use serde::{Deserialize, Deserializer, Serialize, Serializer};
 use std::collections::HashMap;
+use oracle_vm_common::types::OptionType;
 
 // Amount 직렬화 도우미
 mod amount_serde {
@@ -23,12 +24,6 @@ mod amount_serde {
     }
 }
 
-/// 옵션 타입
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
-pub enum OptionType {
-    Call,
-    Put,
-}
 
 /// 옵션 상태
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]

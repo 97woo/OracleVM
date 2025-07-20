@@ -1,4 +1,5 @@
-use btcfi_contracts::bitcoin_option::{BitcoinOption, OptionType};
+use btcfi_contracts::bitcoin_option::BitcoinOption;
+use btcfi_contracts::OptionType;
 use btcfi_contracts::testnet_deployer::TestnetDeployer;
 use bitcoin::secp256k1::{Secp256k1, SecretKey, PublicKey};
 use bitcoin::{OutPoint, Txid, Amount};

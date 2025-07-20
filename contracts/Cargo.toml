@@ -21,6 +21,7 @@ tracing = "0.1"
 tracing-subscriber = "0.3"
 hex = "0.4"
 clap = { version = "4.0", features = ["derive"] }
+oracle-vm-common = { path = "../crates/common" }
 
 [dev-dependencies]
 tokio-test = "0.4"

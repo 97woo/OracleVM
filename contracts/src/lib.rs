@@ -4,5 +4,6 @@ pub mod bitvmx_bridge;
 pub mod testnet_deployer;
 
 pub use simple_contract::{
-    OptionStatus, OptionType, SimpleContractManager, SimpleOption, SimplePoolState,
+    OptionStatus, SimpleContractManager, SimpleOption, SimplePoolState,
 };
+pub use oracle_vm_common::types::OptionType;

@@ -1,6 +1,7 @@
 //! BitVMX Oracle VM implementation
 
 use oracle_vm_common::{OracleVmError, Result};
+use oracle_vm_common::types::OptionType;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 
@@ -51,12 +52,6 @@ pub struct OptionState {
     pub premium: u64,
 }
 
-/// Option type
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub enum OptionType {
-    Call,
-    Put,
-}
 
 /// Settlement to be executed
 #[derive(Debug, Clone, Serialize, Deserialize)]
