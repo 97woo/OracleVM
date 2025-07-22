@@ -1,0 +1,10 @@
+{
+  "submission_txid": "273b00d53e5c306cf199bf86c4cb30a030d636fbe8636c331af1f847f93d6c09",
+  "block_height": 103,
+  "timestamp": 1753191051,
+  "proof_summary": {
+    "merkle_root": "4102a60bad6b1771e4c815091e72ab0e0cdbc83f04dd328b932a3fce2342b866",
+    "on_chain_size": 34,
+    "verification_url": "https://btc.com/testnet/tx/273b00d53e5c306cf199bf86c4cb30a030d636fbe8636c331af1f847f93d6c09"
+  }
+}

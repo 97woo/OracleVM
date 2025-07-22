@@ -1,0 +1,21 @@
+{
+  "type": "bitvmx_option_settlement",
+  "version": 1,
+  "option": {
+    "type": "CALL",
+    "strike": 52000,
+    "spot": 50000,
+    "quantity": 0.5
+  },
+  "execution": {
+    "payout": 0,
+    "steps": 897
+  },
+  "script": {
+    "input": "0000000080584f00404b4c0032000000",
+    "output": 0,
+    "steps": 897,
+    "program_hash": "32238ba758cd52d6b98b39b99dc2ff55402cbb118415bccfcec2be792fede786"
+  },
+  "timestamp": 1753208257
+}

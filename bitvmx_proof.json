@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "type": "option_settlement",
+  "input": {
+    "option_type": "Call",
+    "strike_price": 5000000,
+    "spot_price": 5200000,
+    "quantity": 100
+  },
+  "execution": {
+    "total_steps": 6,
+    "trace_hash": "4102a60bad6b1771e4c815091e72ab0e0cdbc83f04dd328b932a3fce2342b866",
+    "memory_writes": 1,
+    "memory_reads": 3
+  },
+  "result": {
+    "payoff": 200000,
+    "is_itm": true
+  },
+  "proof": {
+    "merkle_root": "4102a60bad6b1771e4c815091e72ab0e0cdbc83f04dd328b932a3fce2342b866",
+    "bitcoin_script": "\n# BitVMX Option Settlement Verification Script\n# Merkle Root: 4102a60bad6b1771e4c815091e72ab0e0cdbc83f04dd328b932a3fce2342b866\n\n# Stack: [signature] [pubkey] [merkle_proof]\n\n# 1. Merkle Root \uac80\uc99d\nOP_DUP\nOP_HASH256\n<4102a60bad6b1771e4c815091e72ab0e0cdbc83f04dd328b932a3fce2342b866>\nOP_EQUALVERIFY\n\n# 2. \uc815\uc0b0 \uae08\uc561 \uac80\uc99d\n<200000>\nOP_EQUALVERIFY\n\n# 3. \uc11c\uba85 \uac80\uc99d\nOP_CHECKSIG\n",
+    "on_chain_data": "01014102a60bad6b1771e4c815091e72ab0e0cdbc83f04dd328b932a3fce2342b866",
+    "on_chain_size": 34
+  }
+}

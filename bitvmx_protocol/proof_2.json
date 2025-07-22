@@ -1,0 +1,21 @@
+{
+  "type": "bitvmx_option_settlement",
+  "version": 1,
+  "option": {
+    "type": "PUT",
+    "strike": 50000,
+    "spot": 48000,
+    "quantity": 2.0
+  },
+  "execution": {
+    "payout": 400000,
+    "steps": 893
+  },
+  "script": {
+    "input": "01000000404b4c00003e4900c8000000",
+    "output": 400000,
+    "steps": 893,
+    "program_hash": "32238ba758cd52d6b98b39b99dc2ff55402cbb118415bccfcec2be792fede786"
+  },
+  "timestamp": 1753208257
+}

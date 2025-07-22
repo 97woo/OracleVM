@@ -7,9 +7,6 @@ members = [
     "crates/common",
     "contracts",
     "calculation",
-    "bitvmx_protocol/BitVMX-CPU/bitcoin-script-riscv",
-    "bitvmx_protocol/BitVMX-CPU/emulator",
-    "bitvmx_protocol/option_settlement",
 ]
 resolver = "2"
 
@@ -36,7 +33,7 @@ sha3 = "0.10"
 secp256k1 = { version = "0.28", features = ["rand-std"] }
 
 # Bitcoin
-bitcoin = "0.32"
+bitcoin = "=0.32.5"
 bitcoind = "0.34"
 
 # Networking
