@@ -82,9 +82,12 @@ See [TESTNET_GUIDE.md](TESTNET_GUIDE.md) for detailed instructions.
 ### Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/btcfi/oracle-vm.git
+# Clone the repository with submodules
+git clone --recursive https://github.com/btcfi/oracle-vm.git
 cd oracle-vm
+
+# If you already cloned without --recursive
+git submodule update --init --recursive
 
 # Build all components
 cargo build --release
@@ -92,6 +95,14 @@ cargo build --release
 # Run all tests (89 tests)
 cargo test
 ```
+
+#### Important: Git Submodules
+
+This project uses Git submodules for the BitVMX protocol:
+
+- **bitvmx_protocol**: BitVMX implementation (https://github.com/97woo/OracleVM.git)
+  
+Always use `--recursive` when cloning or run `git submodule update --init --recursive` after cloning.
 
 ### Running the System
 
