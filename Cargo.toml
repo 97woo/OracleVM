@@ -7,7 +7,9 @@ members = [
     "crates/common",
     "contracts",
     "calculation",
-    "bitvmx_protocol",
+    "bitvmx_protocol/BitVMX-CPU/bitcoin-script-riscv",
+    "bitvmx_protocol/BitVMX-CPU/emulator",
+    "bitvmx_protocol/option_settlement",
 ]
 resolver = "2"
 
@@ -34,7 +36,7 @@ sha3 = "0.10"
 secp256k1 = { version = "0.28", features = ["rand-std"] }
 
 # Bitcoin
-bitcoin = "0.31"
+bitcoin = "0.32"
 bitcoind = "0.34"
 
 # Networking
@@ -73,4 +75,12 @@ clap = { version = "4.4", features = ["derive"] }
 
 # Metrics
 prometheus = "0.13"
+
+# [patch.crates-io]
+# bitcoin = { git = "https://github.com/rust-bitcoin/rust-bitcoin", branch = "bitvm" }
+# bitcoin_hashes = { git = "https://github.com/rust-bitcoin/rust-bitcoin", branch = "bitvm" }
+# bitcoin-internals = { git = "https://github.com/rust-bitcoin/rust-bitcoin", branch = "bitvm" }
+# bitcoin-io = { git = "https://github.com/rust-bitcoin/rust-bitcoin", branch = "bitvm" }
+# bitcoin-units = { git = "https://github.com/rust-bitcoin/rust-bitcoin", branch = "bitvm" }
+# base58check = { git = "https://github.com/rust-bitcoin/rust-bitcoin", branch = "bitvm" }
 

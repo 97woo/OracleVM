@@ -5,6 +5,8 @@ edition = "2021"
 
 [dependencies]
 bitcoin = { version = "0.32", features = ["serde", "rand", "rand-std"] }
+bitcoin-script-riscv = { path = "../bitvmx_protocol/BitVMX-CPU/bitcoin-script-riscv" }
+emulator = { path = "../bitvmx_protocol/BitVMX-CPU/emulator" }
 anyhow = "1.0"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
@@ -15,6 +17,13 @@ hex = "0.4"
 clap = { version = "4.0", features = ["derive"] }
 oracle-vm-common = { path = "../crates/common" }
 chrono = { version = "0.4", features = ["serde"] }
+tonic = "0.12"
+prost = "0.13"
+sha2 = "0.10"
+
+[build-dependencies]
+tonic-build = "0.12"
 
 [dev-dependencies]
 tokio-test = "0.4"
+rand = "0.8"
