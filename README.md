@@ -39,6 +39,15 @@ BTCFi Oracle VM is a groundbreaking system that brings sophisticated DeFi primit
 
 The system consists of four core modules working in harmony:
 
+### Why Both Rust and C?
+
+BTCFi uses **Rust** for the application layer (API, pool management, real-time services) and **C** for the proof generation layer (BitVMX RISC-V execution). This dual implementation leverages each language's strengths:
+
+- **Rust**: Type-safe, async services with complex business logic
+- **C**: Simple, deterministic code for Bitcoin L1 verifiable proofs
+
+See [DUAL_IMPLEMENTATION_RATIONALE.md](docs/DUAL_IMPLEMENTATION_RATIONALE.md) for detailed explanation.
+
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
 │                         BTCFi Option Settlement System               │
