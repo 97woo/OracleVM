@@ -165,3 +165,20 @@ cython_debug/
 *files/
 
 .DS_Store
+
+# BitVMX submodules and external repos
+BitVM/
+BitVMX-CPU/
+pybitvmbinding/
+rust-bitcoin-script-stack/
+rust-esplora-client/
+
+# Build artifacts
+*.elf
+*.o
+*.a
+
+# Temporary files
+Dockerfile.fixed
+Dockerfile.minimal
+Dockerfile.original
