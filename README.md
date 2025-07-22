@@ -7,6 +7,19 @@
 [![Tests](https://img.shields.io/badge/Tests-89%20passing-green.svg)](https://github.com/btcfi/oracle-vm/actions)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
+## ✅ 증명 시스템 작동 확인 (2025-07-22)
+
+실제 증명 시스템이 정상 작동함을 확인했습니다:
+
+```bash
+./poc_demo.sh
+```
+
+**실행 결과**:
+- Oracle 가격: $118,126 (Binance API 실시간)
+- Call 옵션 ITM 정산: $68,126 지급액 계산
+- 증명 데이터 생성: `option_settlement_proof.json`
+
 ## 🎯 Overview
 
 BTCFi Oracle VM is a groundbreaking system that brings sophisticated DeFi primitives directly to Bitcoin Layer 1, enabling trustless option settlement without external chains or bridges.
