@@ -1,9 +1,9 @@
 {
   "option_type": "0",
   "strike_price": 50000,
-  "spot_price": 118126,
+  "spot_price": 117677,
   "quantity": 100,
-  "payoff": 68126,
+  "payoff": 67677,
   "status": "ITM (In The Money)",
-  "timestamp": 1753170368
+  "timestamp": 1753171526
 }
