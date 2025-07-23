@@ -114,7 +114,7 @@ test_output
 # ===========================
 # Note: Keep public docs, ignore private/temp docs
 temp_docs/
-CLAUDE.md
+bitvmx-whitepaper2.pdf
 
 # ===========================
 # Node.js (if frontend added)

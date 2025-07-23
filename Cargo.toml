@@ -7,6 +7,7 @@ members = [
     "crates/common",
     "contracts",
     "calculation",
+    "orchestrator",
     "bitvmx_protocol/BitVMX-CPU/bitcoin-script-riscv",
     "bitvmx_protocol/BitVMX-CPU/emulator",
     "bitvmx_protocol/option_settlement",
