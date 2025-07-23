@@ -7,6 +7,7 @@ pub mod price_feed_client;
 pub mod bitvmx_proof_generator;
 pub mod bitvmx_presign;
 pub mod bitvmx_emulator_integration;
+pub mod bitcoin_transaction;
 
 pub use simple_contract::{
     OptionStatus, SimpleContractManager, SimpleOption, SimplePoolState,
