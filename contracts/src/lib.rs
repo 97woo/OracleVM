@@ -10,6 +10,7 @@ pub mod bitvmx_emulator_integration;
 pub mod bitcoin_transaction;
 pub mod bitcoin_anchoring;
 pub mod bitcoin_anchoring_v2;
+pub mod bitvmx_option_registry;
 
 pub use simple_contract::{
     OptionStatus, SimpleContractManager, SimpleOption, SimplePoolState,
