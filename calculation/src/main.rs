@@ -7,11 +7,13 @@ mod models;
 mod pricing;
 mod repositories;
 mod services;
+mod price_updater;
 
 use models::{DeltaInfo, MarketState, OptionPremium, PremiumQuery};
 use pricing::BlackScholesPricing;
 use repositories::{InMemoryMarketRepo, InMemoryPoolRepo, InMemoryPremiumRepo};
 use services::{DeltaManagementService, MarketDataService, PremiumCalculationService};
+use price_updater::PriceUpdater;
 
 /// 애플리케이션 상태
 struct AppState {
@@ -78,6 +80,24 @@ async fn main() {
 
     // 초기 데이터 설정
     premium_service.update_premium_map(70000.0).await.unwrap();
+
+    // Oracle Aggregator와 연동하여 실시간 가격 업데이트 시작
+    let aggregator_url = std::env::var("AGGREGATOR_URL")
+        .unwrap_or_else(|_| "http://localhost:50051".to_string());
+    
+    info!("Connecting to Oracle Aggregator at {}", aggregator_url);
+    
+    let price_updater = PriceUpdater::new(
+        premium_service.clone(),
+        aggregator_url,
+    );
+    
+    // 백그라운드에서 가격 업데이트 실행
+    let updater_handle = tokio::spawn(async move {
+        if let Err(e) = price_updater.start().await {
+            tracing::error!("Price updater error: {}", e);
+        }
+    });
 
     // 애플리케이션 상태
     let app_state = Arc::new(AppState {

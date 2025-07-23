@@ -88,6 +88,15 @@ where
             self.premium_repo.get_all_premiums().await
         }
     }
+    
+    /// 현물 가격 업데이트 (시장 상태 저장)
+    pub async fn update_spot_price(&self, spot_price: f64) -> Result<(), String> {
+        let mut market_state = self.market_repo.get_current_state().await?;
+        market_state.last_price = spot_price;
+        market_state.last_updated = chrono::Utc::now().timestamp();
+        self.market_repo.update_state(market_state).await?;
+        Ok(())
+    }
 }
 
 /// 델타 관리 서비스
