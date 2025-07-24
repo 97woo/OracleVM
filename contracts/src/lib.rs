@@ -5,7 +5,7 @@ pub mod buyer_only_option;
 pub mod price_feed_client;
 pub mod bitvmx_proof_generator;
 pub mod bitvmx_presign;
-pub mod bitvmx_emulator_integration;
+pub mod bitvmx_integration;
 pub mod bitcoin_transaction;
 pub mod bitcoin_anchoring_v2;
 pub mod bitvmx_option_registry;
